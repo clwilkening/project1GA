@@ -1,4 +1,4 @@
-body{
+body {
   background-image: url("http://i.imgur.com/aNavBcv.jpg");
   background-attachment: fixed;
   background-position: center;
@@ -10,19 +10,19 @@ h1 {
   text-align: center;
   color: white;
   font-family: 'Homemade Apple', cursive;
-  font-size: 60px;
+  font-size: 50px;
   font-weight: 800;
-  margin-top: 40px;
+  margin-top: 35px;
 }
 
 .container {
   vertical-align: middle;
   margin: 0 auto;
   /*border: 3px solid white;*/
-  margin-top:30px;
+  margin-top:25px;
   box-sizing: border-box;
-  max-width: 500px;
-  height: 500px;
+  max-width: 450px;
+  height: 450px;
   position: relative;
 }
 
@@ -66,19 +66,24 @@ h1 {
 
 .break {
   position: relative;
+  height: 30px;
 }
 
 .start {
-  padding: 7px 30px;
-  position: fixed;
+  padding: 10px 30px;
+  position: relative;
+  margin: 0 auto;
   display: block;
-  top: 90%;
-  left: 45.8%;
+
 }
 
-footer {
+/*.start .break:before {
+  height:; 140px;
+}*/
+
+footer{
   display: block;
-  margin-top: 50px;
+  margin-top: 30px;
 /*  left: 0;
   bottom: 0;
   right: 0;*/
@@ -86,6 +91,9 @@ footer {
   text-align: center;
 }
 
+.site-footer .break2:after {
+  height: 100px;
+}
 
 /* #EA4335 - red
 #FBBC05 - yellow
