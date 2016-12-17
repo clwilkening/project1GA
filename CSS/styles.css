@@ -3,7 +3,6 @@ body {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-
 }
 
 h1 {
@@ -24,7 +23,6 @@ h1 {
   max-width: 450px;
   height: 450px;
   position: relative;
-  background-color:black;
 }
 
 .button {
@@ -37,29 +35,25 @@ h1 {
   outline: none;
 }
 
-#b0 {
+.b0 {
   position: absolute;
   left: 0;
   top: 0;
   border-color: #EA4335;
 }
 
-#b0-red {
-  position: absolute;
-  left: 0;
-  top: 0;
-  border-color: #EA4335;
+.b0-red {
   background-color: #EA4335;
 }
 
-#b1 {
+.b1 {
   position: absolute;
   right: 0;
   top: 0;
   border-color: #FBBC05;
 }
 
-#b1-yellow{
+.b1-yellow{
   position: absolute;
   right: 0;
   top: 0;
@@ -67,14 +61,14 @@ h1 {
   background-color: #FBBC05;
 }
 
-#b2 {
+.b2 {
   position: absolute;
   right: 0;
   bottom: 0;
   border-color: #34A853;
 }
 
-#b2-green {
+.b2-green {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -82,14 +76,14 @@ h1 {
   background-color: #34A853;
 }
 
-#b3 {
+.b3 {
   position: absolute;
   left: 0;
   bottom: 0;
   border-color: #4385F4;
 }
 
-#b3-blue {
+.b3-blue {
   position: absolute;
   left: 0;
   bottom: 0;
