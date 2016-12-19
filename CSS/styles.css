@@ -32,6 +32,30 @@ h3:hover {
   cursor: pointer;
 }
 
+.modal { /*grabbed and edited from w3*/
+    display: none; /* Hidden by default */
+}
+
+#modal-content {
+  display: none;
+  z-index: 1;
+  background-color: white !important;
+  position: absolute;
+  left: 50px;
+  top: 150px;
+  width: 190px;
+  height: 190px;
+  padding: 10px 10px 10px 15px;
+  border-radius: 10%;
+  border: 10px solid silver;
+  box-shadow: 0 0 15px silver;
+  font-size: 20px;
+  font-family: 'Baloo Thambi', cursive;
+  color: forestgreen;
+  animation: ease-in-out 4s;
+  line-height: 28px;
+}
+
 .container {
   vertical-align: middle;
   margin: 0 auto;
@@ -41,6 +65,42 @@ h3:hover {
   max-width: 450px;
   height: 450px;
   position: relative;
+}
+
+.win {
+  vertical-align: middle;
+  margin: 0 auto;
+  z-index: 1;
+  background: white;
+  border: 10px solid black;
+  /*border: 3px solid white;*/
+  margin-top:10px;
+  box-sizing: border-box;
+  max-width: 450px;
+  height: 450px;
+  font-size: 50px;
+  font-family: 'Baloo Thambi', cursive;
+  color: forestgreen;
+  text-align: center;
+  padding-top: 25%;
+}
+
+.lose {
+  vertical-align: middle;
+  margin: 0 auto;
+  z-index: 0;
+  background: darkgrey;
+  border: 10px solid black;
+  /*border: 3px solid white;*/
+  margin-top:10px;
+  box-sizing: border-box;
+  max-width: 450px;
+  height: 450px;
+  font-size: 50px;
+  font-family: 'Baloo Thambi', cursive;
+  color: tomato;
+  text-align: center;
+  padding-top: 25%;
 }
 
 .button {
@@ -131,11 +191,6 @@ h3:hover {
 
 }
 
-.break {
-  position: relative;
-  height: 30px;
-}
-
 .start {
   font-family: 'Baloo Thambi', cursive;
   color: white;
@@ -174,7 +229,7 @@ span {
   color: hotpink;
 }
 
-.site-footer .break2:after {
+.site-footer:after {
   height: 70px;
 }
 

@@ -1,10 +1,5 @@
-// class Simon {
 
-// }
-console.log('JS is working!')
-// function startButton() {
-
-// }
+console.log('JS is working!');
 
 let simonButtonOptions = ['b0', 'b1', 'b2', 'b3'];
 let simonCurrentArray = [];
@@ -13,10 +8,21 @@ let playerCurrentArray = [];
 let currentLevel = 1;
 
 
-
-
+//initaites the game sequence. resets the board after win/lose.
+function newGame() {
+  simonCurrentArray = [];
+  playerCurrentArray = [];
+  currentLevel = 1;
+  playerTurn = false;
+  isFirstMove = true;
+  setTimeout(function() {
+    simonNewMove();
+  }, 1000);
+  document.getElementById('simonStrings').play();
+};
 
 //click function is to change Id of the button
+//allows user to let a button blink.
   function redClick(){
     $('.b0').addClass('b0-red');
     setTimeout(function(){
@@ -55,6 +61,7 @@ let currentLevel = 1;
 //  on the screen.
   function buttonClick(buttonID) {
     let color;
+      //checks the first move so that there isn't a triplet played. only the starting sound.
       if (isFirstMove === true) {
         if (buttonID === 'b0') {
           color = 'red';
@@ -67,6 +74,7 @@ let currentLevel = 1;
         }
         isFirstMove = false;
       } else {
+      //will play the sounds without the intro music.
       if (buttonID === 'b0') {
         color = 'red';
         document.getElementById('playb0').play();
@@ -87,12 +95,14 @@ let currentLevel = 1;
     }, 400);
   };
 
+  //function blinks through Simon's array.
   function simonShow() {
     // $('.button').prop('disabled', true);
     console.log(simonCurrentArray);
-    // loop over simonCurrentArray and call buttonClick passing in each item
+    //tried to check for player turn in order to disable user click during Simon's turn.
     if (playerTurn === false) {
       console.log('playerTurn', playerTurn);
+      // loop over simonCurrentArray and call buttonClick passing in each item
       let x = 0
         for(let i = 0; i < simonCurrentArray.length; i++) {
         setTimeout(function() {
@@ -124,12 +134,15 @@ let currentLevel = 1;
     console.log(playerTurn);
   //};
 
-function nextLevel() {
-  currentLevel++;
-  playerCurrentArray = [];
-  console.log(currentLevel);
-};
+  //adds to the level count.
+  function nextLevel() {
+    currentLevel++;
+    playerCurrentArray = [];
+    console.log(currentLevel);
+  };
 
+  //functions checks the user array against simon array to see if they match.
+  //If they match, player wins or increases level.
   function playerMove(par) {
     if (playerTurn === true) {
       playerCurrentArray.push(par);
@@ -137,20 +150,37 @@ function nextLevel() {
         console.log(playerTurn);
       if (playerCurrentArray[playerCurrentArray.length -1] !== simonCurrentArray[playerCurrentArray.length -1]){
         setTimeout(function() {
+          // $('.container').addClass('lose');
+          //     $('.lose').html('YOU LOSE!');
+          //     setTimeout(function(){
+          //       $('.lose').empty();
+          //     }, 1500);
+          //     setTimeout(function(){
+          //       $('.container').removeClass('lose');
+          //     }, 2500);
           alert('haha YOU LOSE!');
-          console.log('haha YOU LOSE!');
+          //decided to comment the above functions for now until I figure out why it removes my .container board.
+          //console.log('haha YOU LOSE!');
         }, 350);
         playerTurn = false;
       } else {
         let checkLevel = playerCurrentArray.length === simonCurrentArray.length;
           if (checkLevel) {
-            if(currentLevel === 5) {
-              alert('Great YOU WIN! Click start to play again.');
+            if(currentLevel === 6) {
+              //use of modal to show win.
+              $('.container').addClass('win');
+              $('.win').html('YOU WIN!');
+              setTimeout(function(){
+              $('.container').removeClass('win');
+              }, 3000);
+              // alert('Great YOU WIN! Click start to play again.');
             } else {
               // setTimeout(function() {
               //   alert('Next Level!');
               // }, 400);
               //no longer needed
+              //timout is used to let previous blink end before new move starts.
+              //otherwise user will see two colors.
               setTimeout(function() {
                 nextLevel();
               }, 800);
@@ -158,46 +188,36 @@ function nextLevel() {
               setTimeout(function() {
                 simonNewMove();
               }, 1000);
-            }
-          }
-        }
-      }
-    }
-
-
+            };
+          };
+        };
+      };
+    };
 
 //set the event listeners to change button color.
 $('.start').on('click', newGame);
-//change above listener to start new Game. Not New Move.
 $('.b0').on('click', redClick);
 $('.b1').on('click', yellowClick);
 $('.b2').on('click', greenClick);
 $('.b3').on('click', blueClick);
-
-
-//sending the middle class into playerMove
+//sending the middle html class into playerMove
 $('.button').on('click', function(event) {
 playerMove($(event.target).attr('class').split(' ')[1]);
 });
 
-//testing trigger function
+
+  function addInstructions() {
+    $('#modal-content').css('display', 'block');
+  };
+  function remInstructions() {
+    $('#modal-content').css('opacity', 0);
+  };
+  //functions here used to show the instructions of game play.
+    $('#instButton').on('click', addInstructions);
+    $('#modal-content').on('click', remInstructions);
+
+//testing trigger function. ended up not using them.
 /*function red() { $('.b0').trigger('click') };
 function yellow() { $('.b1').trigger('click') };
 function green() { $('.b2').trigger('click') };
 function blue() { $('.b3').trigger('click') };*/
-
-function newGame() {
-  simonCurrentArray = [];
-  playerCurrentArray = [];
-  currentLevel = 1;
-  playerTurn = false;
-  isFirstMove = true;
-  setTimeout(function() {
-    simonNewMove();
-  }, 1000);
-  document.getElementById('simonStrings').play();
-};
-
-//this adds a new move onto the past moves. simonShow calls the function to display the array
-
-//create a function to show simon's moves that is invoked in at the end of simons new move.
