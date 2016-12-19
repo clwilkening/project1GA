@@ -1,5 +1,5 @@
 body {
-  background-image: url("http://i.imgur.com/aNavBcv.jpg");
+  background-image: url("http://i.imgur.com/beQa5oi.jpg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -7,18 +7,36 @@ body {
 
 h1 {
   text-align: center;
+  font-family: 'Baloo Thambi', cursive;
   color: white;
-  font-family: 'Homemade Apple', cursive;
-  font-size: 50px;
+  text-shadow: 4px 4px grey;
+  font-size: 48px;
+  letter-spacing: 5px;
   font-weight: 800;
-  margin-top: 35px;
+  margin-top: 30px;
+}
+
+h3 {
+  font-family: 'Baloo Thambi', cursive;
+  color: white;
+  float: left;
+  letter-spacing: 5px;
+  text-shadow: 2px 2px grey;
+  font-size: 30px;
+  padding-left: 6%;
+}
+
+h3:hover {
+  color: hotpink;
+  text-shadow: 2px 2px limegreen;
+  cursor: pointer;
 }
 
 .container {
   vertical-align: middle;
   margin: 0 auto;
   /*border: 3px solid white;*/
-  margin-top:25px;
+  margin-top:10px;
   box-sizing: border-box;
   max-width: 450px;
   height: 450px;
@@ -32,7 +50,13 @@ h1 {
   height: 200px;
   min-width: 50px;
   min-height: 50px;
+  box-sizing: border-box;
   outline: none;
+  border-radius: 10%;
+}
+.button:hover{
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255,255,255,1);
 }
 
 .b0 {
@@ -91,17 +115,42 @@ h1 {
   background-color: #4385F4;
 }
 
+.count{
+  font-family: 'Baloo Thambi', cursive;
+  font-size: 45px;
+  color: white;
+  text-shadow: 0 0 20px darkviolet;
+  position: absolute;
+  margin: 44.5%;
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  /*background-color: rgba(200,200,200,.5);*/
+  text-align: center;
+  padding-top: 10px;
+
+}
+
 .break {
   position: relative;
   height: 30px;
 }
 
 .start {
-  padding: 10px 30px;
+  font-family: 'Baloo Thambi', cursive;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 5px;
+  text-shadow: 3px 3px grey;
+  background-color: rgba(0,200,0,.5);
+  padding: 10px 20px;
   position: relative;
   margin: 0 auto;
   display: block;
-
+  outline: none;
+}
+.start:hover {
+  cursor: pointer;
 }
 
 /*.start .break:before {
@@ -110,16 +159,23 @@ h1 {
 
 footer{
   display: block;
-  margin-top: 30px;
+  margin-top: 20px;
+  font-size: 18px;
+  color: silver;
+  text-shadow: 4px 4px 15px white;
 /*  left: 0;
   bottom: 0;
   right: 0;*/
-  padding-top: 1rem;
+  padding-top: .5rem;
   text-align: center;
 }
 
+span {
+  color: hotpink;
+}
+
 .site-footer .break2:after {
-  height: 100px;
+  height: 70px;
 }
 
 /* #EA4335 - red

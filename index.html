@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Simon | Chris W</title>
   <script src="src/jquery-3.1.1.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="CSS/reset.css">
   <link rel="stylesheet" type="text/css" href="CSS/styles.css">
@@ -12,13 +13,14 @@
 
 <h1>Simon</h1>
 
-<h3>How to Play</h3>
+<h3 id="instButton">How to Play</h3>
 
 <div class="container">
   <button class="button b0"><audio id="playb0" src="audio/simonHarp1.mp3" preload="auto"></audio></button>
   <button class="button b1"><audio id="playb1" src="audio/simonHarp2.mp3" preload="auto"></audio></button>
   <button class="button b2"><audio id="playb2" src="audio/simonHarp3.mp3" preload="auto"></audio></button>
   <button class="button b3"><audio id="playb3" src="audio/simonHarp4.mp3" preload="auto"></audio></button>
+  <div class="count"></div>
 </div>
 
 <div class="break"><div>
@@ -27,7 +29,7 @@
 
 <div class="break2"><div>
 
-<footer class = "site-footer">Made by Chris Wilkening</footer>
+<footer class = "site-footer">Made with <span>&#9829;</span> by Chris Wilkening</footer>
 
 <script src="src/app.js"></script>
 </body>
