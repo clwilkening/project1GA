@@ -28,7 +28,10 @@ function newGame() {
     setTimeout(function(){
     $('.b0').removeClass('b0-red');
     }, 300);
-    document.getElementById('playb0').play();
+    const redAudio = document.getElementById('playb0');
+    redAudio.currentTime = 0;
+    redAudio.play();
+    //document.getElementById('playb0').play();
   }
 
   function yellowClick() {
@@ -36,7 +39,9 @@ function newGame() {
     setTimeout(function(){
     $('.b1').removeClass('b1-yellow');
     }, 300);
-    document.getElementById('playb1').play();
+    yellowAudio = document.getElementById('playb1')
+    yellowAudio.currentTime = 0;
+    yellowAudio.play();
   }
 
   function greenClick() {
@@ -44,7 +49,9 @@ function newGame() {
     setTimeout(function(){
     $('.b2').removeClass('b2-green');
     }, 300);
-    document.getElementById('playb2').play();
+    greenAudio = document.getElementById('playb2')
+    greenAudio.currentTime = 0;
+    greenAudio.play();
   }
 
   function blueClick() {
@@ -52,7 +59,10 @@ function newGame() {
     setTimeout(function(){
     $('.b3').removeClass('b3-blue');
     }, 300);
-    document.getElementById('playb3').play();
+    blueAudio = document.getElementById('playb3')
+    blueAudio.currentTime = 0;
+    blueAudio.play();
+
   }
 
 //this buttonClick grabbs the buttonID from simonShow.
@@ -77,16 +87,24 @@ function newGame() {
       //will play the sounds without the intro music.
       if (buttonID === 'b0') {
         color = 'red';
-        document.getElementById('playb0').play();
+        const redAudio = document.getElementById('playb0');
+        redAudio.currentTime = 0;
+        redAudio.play();
       } else if (buttonID === 'b1') {
         color = 'yellow';
-        document.getElementById('playb1').play();
+        yellowAudio = document.getElementById('playb1')
+        yellowAudio.currentTime = 0;
+        yellowAudio.play();
       } else if (buttonID === 'b2') {
         color = 'green';
-        document.getElementById('playb2').play();
+        greenAudio = document.getElementById('playb2')
+        greenAudio.currentTime = 0;
+        greenAudio.play();
       } else if (buttonID === 'b3') {
         color = 'blue';
-        document.getElementById('playb3').play();
+        blueAudio = document.getElementById('playb3')
+        blueAudio.currentTime = 0;
+        blueAudio.play();
       };
     };
     $(`.${buttonID}`).addClass(`${buttonID}-${color}`);
