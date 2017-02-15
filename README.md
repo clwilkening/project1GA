@@ -6,11 +6,13 @@
 ![Picture of Simon Game](http://i.imgur.com/JraiZBo.png)
 
 ####Technologies
-To make this game is used:
--HTML
--CSS
--JavaScript
--jQuery
+To make this game I used:
+- HTML
+- CSS
+- JavaScript
+- jQuery
+- Logic X
+- Finale Music
 
 Take a look: 
 
@@ -54,7 +56,7 @@ function buttonClick(buttonID) {
 
 ####My approach
 I broke down what the game needed to do into smaller sections. First I
-focsued on the user getting the buttons to blink. Then I focused on simon
+focsued on the user getting the buttons to blink. Then I focused on Simon
 getting them to blink. After that, I wrote the functions for the game functionality.
 Once I had a working MVP, I spent some time with CSS and trying to implement modals.
 Take a look at my wireframe below. 
@@ -65,7 +67,7 @@ Take a look at my wireframe below.
 I had difficulty getting my sound to work properly with the blinking. 
 I wrote my own music, intended to be half a second long. The interval of Simon's
 blinking is also half a second. I changed the time to various intervals, but it the same
-color blinks in a row, the sound will not play the second time. I found the solution in a Wes Bos tutorial by using ```currentTime === 0```. I also had difficulty with my modal. When the player wins, there is a "You Win" modal attached to the board container. When the class for the modal is removed, the board is also removed. I left the lose modal commented out to show that the start button will always start a new game.
+color blinks in a row, the sound will not play the second time. I found the solution in a Wes Bos tutorial by using ```currentTime = 0```. I also had difficulty with my modal. When the player wins, there is a "You Win" modal attached to the board container. When the class for the modal is removed, the board is also removed. I left the lose modal commented out to show that the start button will always start a new game.
 I had difficulty translating my code into using a ES6 class.
 
 Written by Chris Wilkening
