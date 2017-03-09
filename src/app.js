@@ -1,5 +1,5 @@
 
-console.log('JS is working!');
+console.log('Welcome to Simon!');
 
 let simonButtonOptions = ['b0', 'b1', 'b2', 'b3'];
 let simonCurrentArray = [];
@@ -116,15 +116,12 @@ function newGame() {
   //function blinks through Simon's array.
   function simonShow() {
     // $('.button').prop('disabled', true);
-    console.log(simonCurrentArray);
     //tried to check for player turn in order to disable user click during Simon's turn.
     if (playerTurn === false) {
-      console.log('playerTurn', playerTurn);
       // loop over simonCurrentArray and call buttonClick passing in each item
       let x = 0
         for(let i = 0; i < simonCurrentArray.length; i++) {
         setTimeout(function() {
-          console.log(simonCurrentArray);
       //call buttonClick to automate the current array with the new move
         buttonClick(simonCurrentArray[i]);
         }, 500 * x);
@@ -136,27 +133,23 @@ function newGame() {
       };
     };
     playerTurn = true;
-    console.log('playerTurn', playerTurn);
   };
 
 //simonNewMove invokes simonShow, which invokes buttonClick.
 //this adds a new move onto the past moves. simonShow calls the function to display the array
   function simonNewMove() {
-    console.log(playerTurn);
     //if (playerTurn === false) {
       simonCurrentArray.push(simonButtonOptions[(Math.floor(Math.random()*4))]);
       simonShow();
       $('.count').html(currentLevel);
     };
     //playerTurn = true;
-    console.log(playerTurn);
   //};
 
   //adds to the level count.
   function nextLevel() {
     currentLevel++;
     playerCurrentArray = [];
-    console.log(currentLevel);
   };
 
   //functions checks the user array against simon array to see if they match.
@@ -164,8 +157,6 @@ function newGame() {
   function playerMove(par) {
     if (playerTurn === true) {
       playerCurrentArray.push(par);
-        console.log(playerCurrentArray);
-        console.log(playerTurn);
       if (playerCurrentArray[playerCurrentArray.length -1] !== simonCurrentArray[playerCurrentArray.length -1]){
         setTimeout(function() {
           // $('.container').addClass('lose');
@@ -191,12 +182,7 @@ function newGame() {
               setTimeout(function(){
               $('.container').removeClass('win');
               }, 3000);
-              // alert('Great YOU WIN! Click start to play again.');
             } else {
-              // setTimeout(function() {
-              //   alert('Next Level!');
-              // }, 400);
-              //no longer needed
               //timout is used to let previous blink end before new move starts.
               //otherwise user will see two colors.
               setTimeout(function() {
@@ -234,8 +220,3 @@ playerMove($(event.target).attr('class').split(' ')[1]);
     $('#instButton').on('click', addInstructions);
     $('#modal-content').on('click', remInstructions);
 
-//testing trigger function. ended up not using them.
-/*function red() { $('.b0').trigger('click') };
-function yellow() { $('.b1').trigger('click') };
-function green() { $('.b2').trigger('click') };
-function blue() { $('.b3').trigger('click') };*/
