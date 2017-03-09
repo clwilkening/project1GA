@@ -1,5 +1,5 @@
 
-console.log('Welcome to Simon!');
+console.log('Welcome to Simon.');
 
 let simonButtonOptions = ['b0', 'b1', 'b2', 'b3'];
 let simonCurrentArray = [];
