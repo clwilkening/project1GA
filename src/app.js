@@ -176,12 +176,21 @@ function newGame() {
         let checkLevel = playerCurrentArray.length === simonCurrentArray.length;
           if (checkLevel) {
             if(currentLevel === 6) {
-              //use of modal to show win.
-              $('.container').addClass('win');
-              $('.win').html('YOU WIN!');
-              setTimeout(function(){
-              $('.container').removeClass('win');
-              }, 3000);
+              //use of modal to show win. first setTimeout is to let sound finish playing to avoid error thrown.
+              setTimeout(() => {
+                $('.container').addClass('win');
+                $('.win').html('YOU WIN!');
+                setTimeout(() => {
+                  $('.container').removeClass('win')
+                  $('.container').html(
+                    `<button class="button b0"><audio id="playb0" src="audio/simonHarp1.mp3" preload="auto"></audio></button>
+                    <button class="button b1"><audio id="playb1" src="audio/simonHarp2.mp3" preload="auto"></audio></button>
+                    <button class="button b2"><audio id="playb2" src="audio/simonHarp3.mp3" preload="auto"></audio></button>
+                    <button class="button b3"><audio id="playb3" src="audio/simonHarp4.mp3" preload="auto"></audio></button>
+                    <div class="count"></div>`
+                  );
+                }, 3000);
+              }, 500);
             } else {
               //timout is used to let previous blink end before new move starts.
               //otherwise user will see two colors.
