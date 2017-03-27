@@ -1,11 +1,11 @@
-#Simon Game
-###Project 1 General Assembly - Chris Wilkening
+# Simon Game
+### Project 1 General Assembly - Chris Wilkening
 
 [Play the Game Here](https://clwilkening.github.io/project1GA/)
 
 ![Picture of Simon Game](http://i.imgur.com/JraiZBo.png)
 
-####Technologies
+#### Technologies
 To make this game I used:
 - HTML
 - CSS
@@ -54,7 +54,7 @@ function buttonClick(buttonID) {
   };
 ```
 
-####My approach
+#### My approach
 I broke down what the game needed to do into smaller sections. First I
 focsued on the user getting the buttons to blink. Then I focused on Simon
 getting them to blink. After that, I wrote the functions for the game functionality.
@@ -63,7 +63,7 @@ Take a look at my wireframe below.
 
 ![Picture of Wire Frame](http://i.imgur.com/W8E9sUv.png)
 
-####Complications
+#### Complications
 I had difficulty getting my sound to work properly with the blinking. 
 I wrote my own music, intended to be half a second long. The interval of Simon's
 blinking is also half a second. I changed the time to various intervals, but it the same
