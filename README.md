@@ -1,7 +1,7 @@
 # Simon Game
 ### Project 1 General Assembly - Chris Wilkening
 
-[Play the Game Here](https://clwilkening.github.io/project1GA/)
+[Play the Game Here](https://clwilkening.github.io/project1GA-Simon/)
 
 ![Picture of Simon Game](http://i.imgur.com/JraiZBo.png)
 
